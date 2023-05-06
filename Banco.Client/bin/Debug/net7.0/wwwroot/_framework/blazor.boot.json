@@ -198,13 +198,13 @@
       "mscorlib.dll": "sha256-qqpKd+W+AFb6UxudEYEKzrz7ma81p5LrWUwPBVvHV4U=",
       "netstandard.dll": "sha256-OYYuPT3JUknj4LdYIa58zF7kDB3tCnLzjCSuhEjtKXM=",
       "System.Private.CoreLib.dll": "sha256-EVS7zPxPV\/41g2mzPwdXtwiigWxI\/SeAHme1IgyD6tc=",
-      "Banco.Client.dll": "sha256-2MqYR7IpRu7w3a2ZHQcRngch8kOQcQGd4CU05ugJdts="
+      "Banco.Client.dll": "sha256-Jq3F\/4boTQ7a+fkLxu2cV5hXomIpxPcMiImoaH9RQtA="
     },
     "extensions": null,
     "lazyAssembly": null,
     "libraryInitializers": null,
     "pdb": {
-      "Banco.Client.pdb": "sha256-9NuDyoyoUO38VrtmfO3GRggnnkSqjrCQP96cnJ5CfRM="
+      "Banco.Client.pdb": "sha256-FoVGkB+AMdq2Ov3\/+p6MCVNH3QUv2kLIpRZ2d5tPq7M="
     },
     "runtime": {
       "dotnet.7.0.5.rd0ww5is2g.js": "sha256-codB25EodaFEP43MDCfMBuKXU4LqurUKnQrpoMIFnPs=",

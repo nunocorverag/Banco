@@ -122,7 +122,9 @@ namespace BancoWeb.Controllers
             }
             else
             {
-                return new JsonResult(new { Errores = errores });
+                // Si la respuesta no es exitosa, redirige al usuario a la página de inicio de sesión
+                var response = new { Errores = errores };
+                return StatusCode(401, response);
             }
         }
 
