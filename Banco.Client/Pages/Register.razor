@@ -1,0 +1,110 @@
+@page "/register"
+@using System.Text.Json
+@inject IJSRuntime JSRuntime
+@inject HttpClient Http
+@inject NavigationManager NavigationManager
+@using Banco.Client.ViewModel
+@using System.Text
+@using Banco.Client.Models
+
+<PageTitle>Registrarse</PageTitle>
+
+<boldDarkTitle>Registrarse</boldDarkTitle>
+@* <div class="mensaje_exito">@ViewBag.SolicitudExitosa</div> *@
+<centerMargin>
+    <EditForm Model="@userModel" OnValidSubmit="RegistrarUsuario">
+      <DataAnnotationsValidator/>
+        <div class="row">
+        </div><br />
+        <div class="row">
+            <label for="Nombre">Nombre</label>
+            <InputText id="nombre" class="col-lg-2" @bind-Value="userModel.Nombre" placeholder="Nombre"/>
+            <ValidationMessage For="@(() => userModel.Nombre)" />
+            @if(errores != null && errores.Contains("ERROR, el Nombre no puede contener numeros!!"))
+            {
+                <div class="col-lg-10 mensaje_error">ERROR, el Nombre no puede contener numeros!!</div>
+            }
+        </div><br />
+        <div class="row">
+            <label for="apeP">Apelido Paterno</label>
+            <InputText id="apeP" class="col-lg-2" @bind-Value="userModel.Ape_P" placeholder="Apellido Paterno"/>
+            <ValidationMessage For="@(() => userModel.Ape_P)" />            
+            @if(errores != null && errores.Contains("ERROR, el Apellido Paterno no puede contener numeros!!"))
+            {
+                <div class="col-lg-10 mensaje_error">ERROR, el Apellido Paterno no puede contener numeros!!</div>
+            }
+        </div><br />
+        <div class="row">
+            <label for="ApeM">Apellido Materno</label>
+            <InputText id="ApeM" class="col-lg-2" @bind-Value="userModel.Ape_M" placeholder="ApeM"/>
+            <ValidationMessage For="@(() => userModel.Ape_M)" />            
+            @if(errores != null && errores.Contains("ERROR, el Apellido Materno no puede contener numeros!!"))
+            {
+                <div class="col-lg-10 mensaje_error">ERROR, el Apellido Materno no puede contener numeros!!</div>
+            }
+        </div><br />
+        <div class="row">
+            <label for="curp">CURP</label>
+            <InputText id="curp" class="col-lg-2" @bind-Value="userModel.Curp" placeholder="CURP"/>
+            <ValidationMessage For="@(() => userModel.Curp)" />            
+            @if(errores != null && errores.Contains("ERROR, Un usuario con ese Curp ya existe!"))
+            {
+                <div class="col-lg-10 mensaje_error">ERROR, Un usuario con ese Curp ya existe!</div>
+            }
+            @if(errores != null && errores.Contains("ERROR, el curp no puede ser menor a 18 caracteres!"))
+            {
+                <div class="col-lg-10 mensaje_error">ERROR, el curp no puede ser menor a 18 caracteres!</div>
+            }
+            @if(errores != null && errores.Contains("ERROR, el curp no puede ser mayor a 18 caracteres!"))
+            {
+                <div class="col-lg-10 mensaje_error">ERROR, el curp no puede ser mayor a 18 caracteres!</div>
+            }
+            @if(errores != null && errores.Contains("ERROR, El CURP no coincide con los datos ingresados!"))
+            {
+                <div class="col-lg-10 mensaje_error">ERROR, El CURP no coincide con los datos ingresados!</div>
+            }
+        </div><br />
+        <div class="row">
+            <label for="fecha_nacimiento">Fecha de Nacimiento</label>
+            <InputDate id="fecha_nacimiento" class="col-lg-2" @bind-Value="userModel.Fecha_Nacimiento"/>
+            <ValidationMessage For="@(() => userModel.Fecha_Nacimiento)" />            
+            @if(errores != null && errores.Contains("ERROR, la fecha de nacimiento no puede ser antes de 1962!!"))
+            {
+                <div class="col-lg-10 mensaje_error">ERROR, la fecha de nacimiento no puede ser antes de 1962!!</div>
+            }
+        </div><br />
+        <input type="submit" value="Register" class="btn btn-primary" />
+    </EditForm>
+
+</centerMargin>
+
+@code {
+    private RegisterModel userModel = new();
+
+    DateTime fechaActual = DateTime.Today;
+
+    private List<string> errores;
+
+    protected override void OnInitialized()
+    {
+        userModel.Fecha_Nacimiento = fechaActual;
+    }
+
+    private async Task RegistrarUsuario()
+    {
+
+        // Serializar los detalles del usuario a JSON
+        var jsonSerializerOptions = new JsonSerializerOptions() { PropertyNameCaseInsensitive = true };
+
+        // Enviar una solicitud POST al controlador Account
+        HttpResponseMessage response = await Http.PostAsJsonAsync("http://localhost:5275/api/Account/Add", userModel, jsonSerializerOptions);
+
+        await JSRuntime.InvokeAsync<object>("console.log", response);
+
+
+
+        var content = await response.Content.ReadAsStringAsync();
+        var result = JsonSerializer.Deserialize<Dictionary<string, List<string>>>(content);
+        errores = result["errores"];
+    }
+}

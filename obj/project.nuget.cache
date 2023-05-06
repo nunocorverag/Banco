@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "HWdgqUnb5zDwBNrmI5vIzrzLOCQdiaqnbbz00b2PjOcDwtJRhT8Rq2oNkYu4Cfl8LxRPfjfN6Y0WB2PmBornww==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\gnuno\\Documents\\CETI\\8vo\\Banco\\build.proj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gnuno\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.2\\microsoft.netframework.referenceassemblies.1.0.2.nupkg.sha512",
+    "C:\\Users\\gnuno\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net45\\1.0.2\\microsoft.netframework.referenceassemblies.net45.1.0.2.nupkg.sha512"
+  ],
+  "logs": []
+}
