@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ao1HdEmlWLAo+iIiVPtuNYIHRMhcRE9/aSmiN3iETu3NiWWmrTl7uzOkkfznnKQVefCg0lmXeDRvEOfrktSgfA==",
+  "dgSpecHash": "DcZCAO6Bu0zphnmFxzttWaCN6aYH4aBvaNldhD6rxDkCgMpR2L4jYJTvJYqg84lqggyl0TsmOOo5CjxYGN8wxg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\gnuno\\Documents\\CETI\\8vo\\Banco\\Banco.Server\\Banco.Server.csproj",
+  "projectFilePath": "C:\\Users\\gnuno\\Documents\\Banco\\Banco.Server\\Banco.Server.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\gnuno\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\gnuno\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

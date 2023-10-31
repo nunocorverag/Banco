@@ -1807,11 +1807,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\gnuno\\Documents\\CETI\\8vo\\Banco\\Banco.Client\\Banco.Client.csproj",
+      "projectUniqueName": "C:\\Users\\gnuno\\Documents\\Banco\\Banco.Client\\Banco.Client.csproj",
       "projectName": "Banco.Client",
-      "projectPath": "C:\\Users\\gnuno\\Documents\\CETI\\8vo\\Banco\\Banco.Client\\Banco.Client.csproj",
+      "projectPath": "C:\\Users\\gnuno\\Documents\\Banco\\Banco.Client\\Banco.Client.csproj",
       "packagesPath": "C:\\Users\\gnuno\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\gnuno\\Documents\\CETI\\8vo\\Banco\\Banco.Client\\obj\\",
+      "outputPath": "C:\\Users\\gnuno\\Documents\\Banco\\Banco.Client\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
